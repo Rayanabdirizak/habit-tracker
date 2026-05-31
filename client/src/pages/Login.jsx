@@ -12,7 +12,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5002/api/v1/auth/login", form);
+      const { data } = await axios.post("https://job-tracker2.onrender.com/api/v1/auth/login", form);
       login(data.user, data.token);
       navigate("/dashboard");
     } catch (err) {
