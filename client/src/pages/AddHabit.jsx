@@ -18,7 +18,7 @@ const AddHabit = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:5001/api/v1/habits", form, {
+      await axios.post("http://localhost:5002/api/v1/habits", form, {
         headers: { Authorization: `Bearer ${token}` },
       });
       navigate("/dashboard");

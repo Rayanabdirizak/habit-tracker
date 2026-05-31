@@ -12,7 +12,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("http://localhost:5001/api/v1/auth/register", form);
+      const { data } = await axios.post("http://localhost:5002/api/v1/auth/register", form);
       login(data.user, data.token);
       navigate("/dashboard");
     } catch (err) {

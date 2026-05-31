@@ -13,7 +13,7 @@ const Dashboard = () => {
 
   const fetchHabits = async () => {
     try {
-      const { data } = await axios.get("http://localhost:5001/api/v1/habits", {
+      const { data } = await axios.get("http://localhost:5002/api/v1/habits", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setHabits(data.habits);
@@ -27,7 +27,7 @@ const Dashboard = () => {
   const toggleHabit = async (id) => {
     try {
       const { data } = await axios.patch(
-        `http://localhost:5001/api/v1/habits/${id}/toggle`,
+        `http://localhost:5002/api/v1/habits/${id}/toggle`,
         {},
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -40,7 +40,7 @@ const Dashboard = () => {
   const deleteHabit = async (id) => {
     if (!window.confirm("Delete this habit?")) return;
     try {
-      await axios.delete(`http://localhost:5001/api/v1/habits/${id}`, {
+      await axios.delete(`http://localhost:5002/api/v1/habits/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setHabits(habits.filter((h) => h._id !== id));
